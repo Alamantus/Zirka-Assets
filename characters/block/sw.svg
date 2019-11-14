@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="500" height="500" version="1.1" viewBox="0 0 132.29 132.29" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(0 -164.71)">
+  <g transform="translate(-2e-6 2.5e-6)">
+   <path transform="matrix(.26458 0 0 .26458 2e-6 164.71)" d="m99.707 74.559c-13.859 0.16606-24.938 11.574-24.699 25.432v300.02c-0.23293 13.97 11.027 25.419 24.999 25.419 13.972 0 25.232-11.45 24.999-25.419v-125.01h99.996v125.01c-0.2329 13.97 11.027 25.419 24.999 25.419 13.972 0 25.232-11.45 24.999-25.419v-125.01h100.02v125.01c-0.26412 13.991 11.005 25.474 24.998 25.474 13.993 0 25.262-11.484 24.998-25.474v-300.02c0.26412-13.991-11.005-25.474-24.998-25.474-13.993 0-25.262 11.484-24.998 25.474v125.01h-100.02v-125.01c0.2329-13.97-11.027-25.419-24.999-25.419-13.972 0-25.232 11.45-24.999 25.419v125.01h-99.996v-125.01c0.24294-14.093-11.205-25.601-25.299-25.432z" color="#000000" color-rendering="auto" dominant-baseline="auto" image-rendering="auto" shape-rendering="auto" solid-color="#000000" style="font-feature-settings:normal;font-variant-alternates:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;font-variant-position:normal;isolation:auto;mix-blend-mode:normal;shape-padding:0;text-decoration-color:#000000;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-orientation:mixed;text-transform:none;white-space:normal"/>
+  </g>
+ </g>
+</svg>

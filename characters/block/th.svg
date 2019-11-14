@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="500" height="500" version="1.1" viewBox="0 0 132.29 132.29" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(0 -164.71)">
+  <g transform="rotate(180 66.146 230.85)"></g>
+  <g transform="translate(-.003376)">
+   <g transform="translate(-15.535 3.5572)">
+    <g transform="translate(-.0034575 .0033751)">
+     <path d="m86.373 173.81s-33.532 67.35-50.297 101.02c-2.1884 4.3975 1.0099 9.5621 5.9219 9.5625h50.27c3.6535-1e-5 6.6152-2.9617 6.6152-6.6152v-94.357h22.494c3.6976 0.0638 6.7294-2.9161 6.7294-6.6143s-3.0318-6.6781-6.7294-6.6143h-28.031c-2.8396-0.30762-5.9419 1.6288-6.9727 3.6152zm-0.7207 31.129v66.229h-32.973z" color="#000000" color-rendering="auto" dominant-baseline="auto" image-rendering="auto" shape-rendering="auto" solid-color="#000000" style="font-feature-settings:normal;font-variant-alternates:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;font-variant-position:normal;isolation:auto;mix-blend-mode:normal;shape-padding:0;text-decoration-color:#000000;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-orientation:mixed;text-transform:none;white-space:normal"/>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>
