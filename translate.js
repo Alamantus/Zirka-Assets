@@ -228,7 +228,7 @@ function getMappedLetters(string, leaveIfNotExists) {
 function insertCharacters(string, container, options) {
   options = typeof options !== 'undefined' ? options : {};
   options.display = typeof options.display !== 'undefined' ? options.display : 'both';
-  options.style = typeof options.style !== 'undefined' ? options.style : 'block';
+  options.type = typeof options.type !== 'undefined' ? options.type : 'block';
   options.size = typeof options.size !== 'undefined' ? options.size : '16pt';
 
   container.setAttribute('dir', 'rtl');
@@ -243,12 +243,12 @@ function insertCharacters(string, container, options) {
     if (!character) {
       result += options.display === 'pronunciation'
         ? ' '
-        : '<span style="display:inline-block;width:20px;"> </span>';
+        : '<span style="display:inline-block;vertical-align:baseline;width:' + options.size + ';"> </span>';
       continue;
     }
-    var filename = 'characters/' + options.style + '/' + character.character + '.svg';
+    var filename = 'characters/' + options.type + '/' + character.character + '.svg';
     console.log(character);
-    var img = '<img src="' + filename + '" alt="Zirka character: ' + character.pronunciation + '" style="display:inline-block;width:auto;height:' + options.size + ';">';
+    var img = '<img src="' + filename + '" alt="Zirka character: ' + character.pronunciation + '" style="display:inline-block;vertical-align:baseline;width:auto;height:' + options.size + ';">';
     switch (options.display) {
       default:
       case 'both': {
@@ -274,17 +274,38 @@ function translate() {
   var zirkaElements = document.getElementsByTagName('zirka');
   for (var i = 0; i < zirkaElements.length; i++) {
     var element = zirkaElements[i];
-    insertCharacters(element.innerText, element);
+    var options = {};
+    if (element.getAttribute('size')) {
+      options.size = element.getAttribute('size');
+    }
+    if (element.getAttribute('type')) {
+      options.type = element.getAttribute('type');
+    }
+    insertCharacters(element.innerText, element, options);
   }
   var zirkaOnlyElements = document.getElementsByTagName('zirka-only');
   for (var i = 0; i < zirkaOnlyElements.length; i++) {
     var element = zirkaOnlyElements[i];
-    insertCharacters(element.innerText, element, {display:'characters'});
+    var options = {display:'characters'};
+    if (element.getAttribute('size')) {
+      options.size = element.getAttribute('size');
+    }
+    if (element.getAttribute('type')) {
+      options.type = element.getAttribute('type');
+    }
+    insertCharacters(element.innerText, element, options);
   }
   var zirkaPronounceElements = document.getElementsByTagName('zirka-pronounce');
   for (var i = 0; i < zirkaPronounceElements.length; i++) {
     var element = zirkaPronounceElements[i];
-    insertCharacters(element.innerText, element, {display:'pronunciation'});
+    var options = {display:'pronunciation'};
+    if (element.getAttribute('size')) {
+      options.size = element.getAttribute('size');
+    }
+    if (element.getAttribute('type')) {
+      options.type = element.getAttribute('type');
+    }
+    insertCharacters(element.innerText, element, options);
   }
 }
 
