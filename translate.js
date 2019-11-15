@@ -1,56 +1,204 @@
 var characterMap = {
-  a: 'a',
-  ai: 'ai',
-  b: 'b',
-  ch: 'ch',
-  ':': 'colon',
-  ',': 'comma',
-  d: 'd',
-  dr: 'dr',
-  e: 'e',
-  '!': 'exclamation',
-  f: 'f',
-  fl: 'fl',
-  fr: 'fr',
-  g: 'g',
-  gr: 'gr',
-  h: 'h',
-  i: 'i',
-  j: 'jz',
-  k: 'k',
-  kl: 'kl',
-  kr: 'kr',
-  l: 'l',
-  m: 'm',
-  n: 'n',
-  o: 'o',
-  p: 'p',
-  '.': 'period',
-  pr: 'pr',
-  '?': 'question',
-  r: 'r',
-  s: 's',
-  sh: 'sh',
-  sk: 'sk',
-  sl: 'sl',
-  sm: 'sm',
-  sn: 'sn',
-  sp: 'sp',
-  st: 'st',
-  sw: 'sw',
-  t: 't',
-  th: 'th',
-  tr: 'tr',
-  tw: 'tw',
-  u: 'u',
-  v: 'vw',
-  w: 'vw',
-  y: 'y',
-  z: 'jz',
+  a: {
+    character: 'a',
+    pronunciation: 'u',
+  },
+  ai: {
+    character: 'ai',
+    pronunciation: 'ua',
+  },
+  b: {
+    character: 'b',
+    pronunciation: 'k',
+  },
+  ch: {
+    character: 'ch',
+    pronunciation: 'th',
+  },
+  ':': {
+    character: 'colon',
+    pronunciation: ':',
+  },
+  '"': {
+    character: 'colon',
+    pronunciation: ':',
+  },
+  ',': {
+    character: 'comma',
+    pronunciation: ',',
+  },
+  d: {
+    character: 'd',
+    pronunciation: 'b',
+  },
+  dr: {
+    character: 'dr',
+    pronunciation: 'bis',
+  },
+  e: {
+    character: 'e',
+    pronunciation: 'o',
+  },
+  '!': {
+    character: 'exclamation',
+    pronunciation: '!',
+  },
+  f: {
+    character: 'f',
+    pronunciation: 'sh',
+  },
+  fl: {
+    character: 'fl',
+    pronunciation: 'shr',
+  },
+  fr: {
+    character: 'fr',
+    pronunciation: 'z',
+  },
+  g: {
+    character: 'g',
+    pronunciation: 'p',
+  },
+  gr: {
+    character: 'gr',
+    pronunciation: 'pas',
+  },
+  h: {
+    character: 'h',
+    pronunciation: 'n',
+  },
+  i: {
+    character: 'i',
+    pronunciation: 'a',
+  },
+  j: {
+    character: 'jz',
+    pronunciation: 'w',
+  },
+  k: {
+    character: 'k',
+    pronunciation: 't',
+  },
+  kl: {
+    character: 'kl',
+    pronunciation: 'tr',
+  },
+  kr: {
+    character: 'kr',
+    pronunciation: 'ts',
+  },
+  l: {
+    character: 'l',
+    pronunciation: 'd',
+  },
+  m: {
+    character: 'm',
+    pronunciation: 'd',
+  },
+  n: {
+    character: 'n',
+    pronunciation: 'f',
+  },
+  o: {
+    character: 'o',
+    pronunciation: 'e',
+  },
+  p: {
+    character: 'p',
+    pronunciation: 'm',
+  },
+  '.': {
+    character: 'period',
+    pronunciation: '.',
+  },
+  pr: {
+    character: 'pr',
+    pronunciation: 'mus',
+  },
+  '?': {
+    character: 'question',
+    pronunciation: '?',
+  },
+  r: {
+    character: 'r',
+    pronunciation: 's',
+  },
+  s: {
+    character: 's',
+    pronunciation: 'l',
+  },
+  sh: {
+    character: 'sh',
+    pronunciation: 'kl',
+  },
+  sk: {
+    character: 'sk',
+    pronunciation: 'lat',
+  },
+  sl: {
+    character: 'sl',
+    pronunciation: 'lr',
+  },
+  sm: {
+    character: 'sm',
+    pronunciation: 'led',
+  },
+  sn: {
+    character: 'sn',
+    pronunciation: 'luf',
+  },
+  sp: {
+    character: 'sp',
+    pronunciation: 'lum',
+  },
+  st: {
+    character: 'st',
+    pronunciation: 'lag',
+  },
+  sw: {
+    character: 'sw',
+    pronunciation: 'luv',
+  },
+  t: {
+    character: 't',
+    pronunciation: 'g',
+  },
+  th: {
+    character: 'th',
+    pronunciation: 'j',
+  },
+  tr: {
+    character: 'tr',
+    pronunciation: 'gis',
+  },
+  tw: {
+    character: 'tw',
+    pronunciation: 'giv',
+  },
+  u: {
+    character: 'u',
+    pronunciation: 'i',
+  },
+  v: {
+    character: 'vw',
+    pronunciation: 'v',
+  },
+  w: {
+    character: 'vw',
+    pronunciation: 'v',
+  },
+  y: {
+    character: 'y',
+    pronunciation: 'ch',
+  },
+  z: {
+    character: 'jz',
+    pronunciation: 'w',
+  },
 }
 
 // getMappedLetters returns an array of strings that can be mapped to character file names.
-function getMappedLetters(string) {
+function getMappedLetters(string, leaveIfNotExists) {
   var result = [];
   var characters = string.toLowerCase().split('');
   for (var i = 0; i < characters.length; i++) {
@@ -65,37 +213,79 @@ function getMappedLetters(string) {
         continue;
       }
     }
+    
     if (typeof characterMap[character] !== 'undefined') {
       // If single character is found, push it to results.
       result.push(characterMap[character]);
       continue;
     }
+    
     result.push(false);  // If character not in map, set false.
   }
   return result;
 }
 
-function insertCharacters(string, insertId, type) {
-  type = typeof type !== 'undefined' ? type : 'block';
-  var container = document.getElementById(insertId);
-  if (!container) {
-    container = document.body;
-  }
+function insertCharacters(string, container, options) {
+  options = typeof options !== 'undefined' ? options : {};
+  options.display = typeof options.display !== 'undefined' ? options.display : 'both';
+  options.style = typeof options.style !== 'undefined' ? options.style : 'block';
+  options.size = typeof options.size !== 'undefined' ? options.size : '16pt';
+
   container.setAttribute('dir', 'rtl');
   container.style.direction = 'rtl';
+  container.style.fontSize = options.size;
+  container.style.lineHeight = options.size;
+
   var result = '';
-  var characters = getMappedLetters(string);
+  var characters = getMappedLetters(string, options.display === 'pronunciation');
   for (var i = 0; i < characters.length; i++) {
-    if (!characters[i]) {
-      result += '<span style="display:inline-block;width:20px;">&nbsp;</span>';
+    var character = characters[i]
+    if (!character) {
+      result += options.display === 'pronunciation'
+        ? ' '
+        : '<span style="display:inline-block;width:20px;"> </span>';
       continue;
     }
-    var filename = 'characters/' + type + '/' + characters[i] + '.svg';
-    result += '<img src="' + filename + '" style="display:inline-block;width:auto;height:12pt;">';
+    var filename = 'characters/' + options.style + '/' + character.character + '.svg';
+    console.log(character);
+    var img = '<img src="' + filename + '" alt="Zirka character: ' + character.pronunciation + '" style="display:inline-block;width:auto;height:' + options.size + ';">';
+    switch (options.display) {
+      default:
+      case 'both': {
+        result += '<ruby>' + img + '<rp>"</rp><rt>' + character.pronunciation + '</rt><rp>"</rp></ruby>';
+        break;
+      }
+      case 'characters': {
+        result += img;
+        break;
+      }
+      case 'pronunciation': {
+        container.setAttribute('dir', '');
+        container.style.direction = '';
+        result += character.pronunciation;
+        break;
+      }
+    }
   }
-  var element = document.createElement('span');
-  element.innerHTML = result;
-  container.appendChild(element);
+  container.innerHTML = result;
 }
 
-insertCharacters('Helo, this is a test!');
+function translate() {
+  var zirkaElements = document.getElementsByTagName('zirka');
+  for (var i = 0; i < zirkaElements.length; i++) {
+    var element = zirkaElements[i];
+    insertCharacters(element.innerText, element);
+  }
+  var zirkaOnlyElements = document.getElementsByTagName('zirka-only');
+  for (var i = 0; i < zirkaOnlyElements.length; i++) {
+    var element = zirkaOnlyElements[i];
+    insertCharacters(element.innerText, element, {display:'characters'});
+  }
+  var zirkaPronounceElements = document.getElementsByTagName('zirka-pronounce');
+  for (var i = 0; i < zirkaPronounceElements.length; i++) {
+    var element = zirkaPronounceElements[i];
+    insertCharacters(element.innerText, element, {display:'pronunciation'});
+  }
+}
+
+translate();
