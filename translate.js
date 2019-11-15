@@ -52,7 +52,7 @@ var characterMap = {
 // getMappedLetters returns an array of strings that can be mapped to character file names.
 function getMappedLetters(string) {
   var result = [];
-  var characters = string.split('');
+  var characters = string.toLowerCase().split('');
   for (var i = 0; i < characters.length; i++) {
     var character = characters[i];
     if (typeof characters[i + 1] !== 'undefined') {
@@ -70,6 +70,32 @@ function getMappedLetters(string) {
       result.push(characterMap[character]);
       continue;
     }
-    push(' ');  // If character not in map, insert space.
+    result.push(false);  // If character not in map, set false.
   }
+  return result;
 }
+
+function insertCharacters(string, insertId, type) {
+  type = typeof type !== 'undefined' ? type : 'block';
+  var container = document.getElementById(insertId);
+  if (!container) {
+    container = document.body;
+  }
+  container.setAttribute('dir', 'rtl');
+  container.style.direction = 'rtl';
+  var result = '';
+  var characters = getMappedLetters(string);
+  for (var i = 0; i < characters.length; i++) {
+    if (!characters[i]) {
+      result += '<span style="display:inline-block;width:20px;">&nbsp;</span>';
+      continue;
+    }
+    var filename = 'characters/' + type + '/' + characters[i] + '.svg';
+    result += '<img src="' + filename + '" style="display:inline-block;width:auto;height:12pt;">';
+  }
+  var element = document.createElement('span');
+  element.innerHTML = result;
+  container.appendChild(element);
+}
+
+insertCharacters('Helo, this is a test!');
