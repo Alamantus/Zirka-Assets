@@ -290,6 +290,7 @@ window.Zirka.getURL = function () {
 
 window.Zirka.translate = function () {
   var zirkaElements = document.getElementsByTagName('zirka');
+  zirkaElements = Array.from(zirkaElements).concat(Array.from(document.getElementsByClassName('zirka')));
   for (var i = 0; i < zirkaElements.length; i++) {
     var element = zirkaElements[i];
     var options = {};
@@ -302,6 +303,7 @@ window.Zirka.translate = function () {
     window.Zirka.insertCharacters(element.innerText, element, options);
   }
   var zirkaOnlyElements = document.getElementsByTagName('zirka-only');
+  zirkaOnlyElements = Array.from(zirkaOnlyElements).concat(Array.from(document.getElementsByClassName('zirka-only')));
   for (var i = 0; i < zirkaOnlyElements.length; i++) {
     var element = zirkaOnlyElements[i];
     var options = {display:'characters'};
@@ -314,6 +316,7 @@ window.Zirka.translate = function () {
     window.Zirka.insertCharacters(element.innerText, element, options);
   }
   var zirkaPronounceElements = document.getElementsByTagName('zirka-pronounce');
+  zirkaPronounceElements = Array.from(zirkaPronounceElements).concat(Array.from(document.getElementsByClassName('zirka-pronounce')));
   for (var i = 0; i < zirkaPronounceElements.length; i++) {
     var element = zirkaPronounceElements[i];
     var options = {display:'pronunciation'};
