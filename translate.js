@@ -248,7 +248,7 @@ function insertCharacters(string, container, options) {
     }
     var filename = 'characters/' + options.type + '/' + character.character + '.svg';
     console.log(character);
-    var img = '<img src="' + filename + '" alt="Zirka character: ' + character.pronunciation + '" style="display:inline-block;vertical-align:baseline;width:auto;height:' + options.size + ';">';
+    var img = '<img src="' + getZirkaURL() + filename + '" alt="Zirka character: ' + character.pronunciation + '" style="display:inline-block;vertical-align:baseline;width:auto;height:' + options.size + ';">';
     switch (options.display) {
       default:
       case 'both': {
@@ -268,6 +268,19 @@ function insertCharacters(string, container, options) {
     }
   }
   container.innerHTML = result;
+}
+
+function getZirkaURL() {
+  if (typeof window.zirkaURL === 'undefined') {
+    var scripts = document.getElementsByTagName('script');
+    for (var i = 0; i < scripts.length; i++) {
+      if (/translate.js$/.test(scripts[i].src)) {
+        window.zirkaURL = scripts[i].src.replace(/translate.js$/, '');
+        break;
+      }
+    }
+  }
+  return window.zirkaURL;
 }
 
 function translate() {
