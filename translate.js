@@ -234,8 +234,20 @@ window.Zirka.getMappedLetters = function (string, leaveIfNotExists) {
 window.Zirka.insertCharacters = function (string, container, options) {
   options = typeof options !== 'undefined' ? options : {};
   options.display = typeof options.display !== 'undefined' ? options.display : 'both';
-  options.type = typeof options.type !== 'undefined' ? options.type : 'block';
-  options.size = typeof options.size !== 'undefined' ? options.size : '16pt';
+  options.type = typeof options.type !== 'undefined'
+    ? options.type
+    : (
+      typeof Zirka.defaultType !== 'undefined'
+      ? Zirka.defaultType
+      : 'block'
+    );
+  options.size = typeof options.size !== 'undefined'
+    ? options.size
+    : (
+      typeof Zirka.defaultSize !== 'undefined'
+      ? Zirka.defaultSize
+      : '16pt'
+    );
 
   container.setAttribute('dir', 'rtl');
   container.style.direction = 'rtl';

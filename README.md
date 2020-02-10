@@ -28,6 +28,18 @@ The default font size is `16pt`, but you can set the font size manually if you w
 
 Check out the [live demo](https://assets.zirka.ga/demo.html) to see how it looks.
 
+### Setting Defaults
+
+You can change the default size by specifying it in a script tag like so:
+
+```
+<script>
+window.Zirka = {
+  defaultSize: '12pt',
+};
+</script>
+```
+
 ## Eventual Features
 
 Someday, I plan to add:
