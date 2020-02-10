@@ -20,4 +20,12 @@ Any text inside these tags will be transformed into Zirka. This works best if yo
 
 The default font size is `16pt`, but you can set the font size manually if you want by adding a `size` attribute to the tag, for example: `<zirka size="20pt">`.
 
-Check out the [live demo](./demo.html) to see how it looks.
+Check out the [live demo](https://assets.zirka.ga/demo.html) to see how it looks.
+
+## Eventual Features
+
+Someday, I plan to add:
+
+- Script font
+- Custom character spacing/kerning
+- Write and export tools (with HTML canvas)
