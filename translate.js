@@ -249,7 +249,6 @@ Zirka.insertCharacters = function (string, container, options) {
       continue;
     }
     var filename = 'characters/' + options.type + '/' + character.character + '.svg';
-    console.log(character);
     var img = '<img src="' + Zirka.getURL() + filename + '" alt="Zirka character: ' + character.pronunciation + '" style="display:inline-block;vertical-align:baseline;width:auto;height:' + options.size + ';">';
     switch (options.display) {
       default:
