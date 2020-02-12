@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test</title>
+  <style>
+    td {
+      text-align: center;
+      font-size: 18pt;
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+<body>
+  <table id="chart">
+  </table>
+
+<script>
+window.Zirka = {
+  defaultSize: '18pt',
+};
+</script>
+<script src="./translate.js"></script>
+<script>
+var tableRows = [
+  ['a',  'b', 'ch',  'd',  'e',  'f',  'g',  'h',  'i',  'j',  'k',  'l',  'm',  'n',  'o',  'p',  'r',  's',  't',  'u',  'v',  'y'],
+  ['ai', '',  '',    'dr', '',   'fl', 'gr', '',   '',   '',   'kl', '',   '',   '',   '',   'pr', '',   'sh', 'th', '',   '',   ''],
+  ['',   '',  '',    '',   '',   'fr', '',   '',   '',   '',   'kr', '',   '',   '',   '',   '',   '',   'sk', 'tr', '',   '',   ''],
+  [',',  '.', ':',   '?',  '!',  '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   'sl', 'tw', '',   '',   ''],
+  ['',   '',  '',    '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   'sm', '',   '',   '',   ''],
+  ['',   '',  '',    '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   'sn', '',   '',   '',   ''],
+  ['',   '',  '',    '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   'sp', '',   '',   '',   ''],
+  ['',   '',  '',    '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   'st', '',   '',   '',   ''],
+  ['',   '',  '',    '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   'sw', '',   '',   '',   ''],
+];
+
+var tableHTML = '';
+
+for (var r = 0; r < tableRows.length; r++) {
+  var row = tableRows[r]
+  tableHTML += '<tr>';
+  for (var c = 0; c < row.length; c++) {
+    var col = row[c];
+    tableHTML += '<td>';
+    if (col.length > 0) {
+      var letter;
+      switch (col) {
+        case 'j': letter = 'J/Z'; break;
+        case 'v': letter = 'V/W'; break;
+        default: letter = (col.substr(0, 1).toUpperCase() + col.substr(1));
+      }
+      tableHTML += '<strong>' + letter + '</strong><br>';
+      tableHTML += '<zirka-only>' + col + '</zirka-only><br>';
+      if (typeof Zirka.characterMap[col].ipa !== 'undefined') {
+        tableHTML += '<em><zirka-pronounce>' + col + '</zirka-pronounce></em><br />';
+        tableHTML += ' /' + Zirka.characterMap[col].ipa + '/';
+      }
+    }
+    tableHTML += '</td>';
+  }
+  tableHTML += '</tr>';
+}
+
+document.getElementById('chart').innerHTML = tableHTML;
+
+Zirka.translate();
+</script>
+</body>
+</html>
