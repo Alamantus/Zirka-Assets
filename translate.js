@@ -8,18 +8,22 @@ window.Zirka.characterMap = {
   a: {
     character: 'a',
     pronunciation: 'u',
+    ipa: 'u',
   },
   ai: {
     character: 'ai',
     pronunciation: 'ua',
+    ipa: 'ua',
   },
   b: {
     character: 'b',
     pronunciation: 'k',
+    ipa: 'k',
   },
   ch: {
     character: 'ch',
     pronunciation: 'th',
+    ipa: 'ð',
   },
   ':': {
     character: 'colon',
@@ -36,14 +40,17 @@ window.Zirka.characterMap = {
   d: {
     character: 'd',
     pronunciation: 'b',
+    ipa: 'b',
   },
   dr: {
     character: 'dr',
     pronunciation: 'bis',
+    ipa: 'bɪs',
   },
   e: {
     character: 'e',
     pronunciation: 'o',
+    ipa: 'o',
   },
   '!': {
     character: 'exclamation',
@@ -52,66 +59,82 @@ window.Zirka.characterMap = {
   f: {
     character: 'f',
     pronunciation: 'sh',
+    ipa: 'ʃ',
   },
   fl: {
     character: 'fl',
     pronunciation: 'shr',
+    ipa: 'ʃɹ',
   },
   fr: {
     character: 'fr',
     pronunciation: 'z',
+    ipa: 'z',
   },
   g: {
     character: 'g',
     pronunciation: 'p',
+    ipa: 'p',
   },
   gr: {
     character: 'gr',
     pronunciation: 'pas',
+    ipa: 'pæs',
   },
   h: {
     character: 'h',
     pronunciation: 'n',
+    ipa: 'n',
   },
   i: {
     character: 'i',
     pronunciation: 'a',
+    ipa: 'a',
   },
   j: {
     character: 'jz',
     pronunciation: 'w',
+    ipa: 'w',
   },
   k: {
     character: 'k',
     pronunciation: 't',
+    ipa: 't',
   },
   kl: {
     character: 'kl',
     pronunciation: 'tr',
+    ipa: 'tɹ',
   },
   kr: {
     character: 'kr',
     pronunciation: 'ts',
+    ipa: 't͡s',
   },
   l: {
     character: 'l',
     pronunciation: 'r',
+    ipa: 'ɹ',
   },
   m: {
     character: 'm',
     pronunciation: 'd',
+    ipa: 'd',
   },
   n: {
     character: 'n',
     pronunciation: 'f',
+    ipa: 'r',
   },
   o: {
     character: 'o',
     pronunciation: 'e',
+    ipa: 'e',
   },
   p: {
     character: 'p',
     pronunciation: 'm',
+    ipa: 'm',
   },
   '.': {
     character: 'period',
@@ -120,6 +143,7 @@ window.Zirka.characterMap = {
   pr: {
     character: 'pr',
     pronunciation: 'mus',
+    ipa: 'məs',
   },
   '?': {
     character: 'question',
@@ -128,78 +152,97 @@ window.Zirka.characterMap = {
   r: {
     character: 'r',
     pronunciation: 's',
+    ipa: 's',
   },
   s: {
     character: 's',
     pronunciation: 'l',
+    ipa: 'l',
   },
   sh: {
     character: 'sh',
     pronunciation: 'kl',
+    ipa: 'kl',
   },
   sk: {
     character: 'sk',
     pronunciation: 'lat',
+    ipa: 'lat',
   },
   sl: {
     character: 'sl',
     pronunciation: 'lr',
+    ipa: 'lɞɾ',
   },
   sm: {
     character: 'sm',
     pronunciation: 'led',
+    ipa: 'lɛd',
   },
   sn: {
     character: 'sn',
     pronunciation: 'luf',
+    ipa: 'ləf',
   },
   sp: {
     character: 'sp',
     pronunciation: 'lum',
+    ipa: 'ləm',
   },
   st: {
     character: 'st',
     pronunciation: 'lag',
+    ipa: 'lag',
   },
   sw: {
     character: 'sw',
     pronunciation: 'luv',
+    ipa: 'ləv',
   },
   t: {
     character: 't',
     pronunciation: 'g',
+    ipa: 'g',
   },
   th: {
     character: 'th',
     pronunciation: 'j',
+    ipa: 'd͡ʒ',
   },
   tr: {
     character: 'tr',
     pronunciation: 'gis',
+    ipa: 'gɪs',
   },
   tw: {
     character: 'tw',
     pronunciation: 'giv',
+    ipa: 'gɪv',
   },
   u: {
     character: 'u',
     pronunciation: 'i',
+    ipa: 'i',
   },
   v: {
     character: 'vw',
     pronunciation: 'v',
+    ipa: 'v',
   },
   w: {
     character: 'vw',
     pronunciation: 'v',
+    ipa: 'v',
   },
   y: {
     character: 'y',
     pronunciation: 'ch',
+    ipa: 't͡ʃ',
   },
   z: {
     character: 'jz',
     pronunciation: 'w',
+    ipa: 'w',
   },
 }
 
