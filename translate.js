@@ -95,7 +95,7 @@ window.Zirka.characterMap = {
   },
   l: {
     character: 'l',
-    pronunciation: 'd',
+    pronunciation: 'r',
   },
   m: {
     character: 'm',
