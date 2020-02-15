@@ -7,8 +7,11 @@
   <style>
     td {
       text-align: center;
-      font-size: 18pt;
+      font-size: 16pt;
       padding: 5px 10px;
+    }
+    td .letter {
+      font-size: 18pt;
     }
   </style>
 </head>
@@ -16,19 +19,14 @@
   <table id="chart">
   </table>
 
-<script>
-window.Zirka = {
-  defaultSize: '18pt',
-};
-</script>
 <script src="./translate.js"></script>
 <script>
 var tableRows = [
   ['a',  'b', 'ch',  'd',  'e',  'f',  'g',  'h',  'i',  'j',  'k',  'l',  'm',  'n',  'o',  'p',  'r',  's',  't',  'u',  'v',  'y'],
   ['ai', '',  '',    'dr', '',   'fl', 'gr', '',   '',   '',   'kl', '',   '',   '',   '',   'pr', '',   'sh', 'sk', 'th', '',   '',   ''],
   ['',   '',  '',    '',   '',   'fr', '',   '',   '',   '',   'kr', '',   '',   '',   '',   '',   '',   'sl', 'sm', 'tr', '',   '',   ''],
-  [',',  '.', ':',   '?',  '!',  '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   'sn', 'sp', 'tw', '',   '',   ''],
-  ['',   '',  '',    '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   'st', 'sw', '',   '',   '',   ''],
+  ['Punctuation',                '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   'sn', 'sp', 'tw', '',   '',   ''],
+  [',',  '.', ':',   '?',  '!',  '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   '',   'st', 'sw', '',   '',   '',   ''],
 ];
 
 var tableHTML = '';
@@ -38,7 +36,10 @@ for (var r = 0; r < tableRows.length; r++) {
   tableHTML += '<tr>';
   for (var c = 0; c < row.length; c++) {
     var col = row[c];
-    if (col === 's') {
+    if (col === 'Punctuation') {
+      tableHTML += '<td colspan="5" valign="bottom">' + col + '</td>';
+      continue;
+    } else if (col === 's') {
       tableHTML += '<td colspan="2">';
     } else {
       tableHTML += '<td>';
@@ -50,10 +51,10 @@ for (var r = 0; r < tableRows.length; r++) {
         case 'v': letter = 'V/W'; break;
         default: letter = (col.substr(0, 1).toUpperCase() + col.substr(1));
       }
-      tableHTML += '<strong>' + letter + '</strong><br>';
-      tableHTML += '<zirka-only>' + col + '</zirka-only><br>';
+      tableHTML += '<strong class="letter">' + letter + '</strong><br>';
+      tableHTML += '<zirka-only size="32pt">' + col + '</zirka-only><br>';
       if (typeof Zirka.characterMap[col].ipa !== 'undefined') {
-        tableHTML += '<em><zirka-pronounce>' + col + '</zirka-pronounce></em><br />';
+        tableHTML += '<em class="zirka-pronounce" size="16pt">' + col + '</em><br />';
         tableHTML += ' /' + Zirka.characterMap[col].ipa + '/';
       }
     }
