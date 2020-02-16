@@ -325,6 +325,12 @@ window.Zirka.insertCharacters = function (string, container, options) {
         result += character.pronunciation;
         break;
       }
+      case 'ipa': {
+        container.setAttribute('dir', '');
+        container.style.direction = '';
+        result += character.ipa;
+        break;
+      }
     }
   }
   container.innerHTML = result;
@@ -375,6 +381,19 @@ window.Zirka.translate = function () {
   for (var i = 0; i < zirkaPronounceElements.length; i++) {
     var element = zirkaPronounceElements[i];
     var options = {display:'pronunciation'};
+    if (element.getAttribute('size')) {
+      options.size = element.getAttribute('size');
+    }
+    if (element.getAttribute('type')) {
+      options.type = element.getAttribute('type');
+    }
+    window.Zirka.insertCharacters(element.innerText, element, options);
+  }
+  var zirkaIPAElements = document.getElementsByTagName('zirka-ipa');
+  zirkaIPAElements = Array.from(zirkaIPAElements).concat(Array.from(document.getElementsByClassName('zirka-ipa')));
+  for (var i = 0; i < zirkaIPAElements.length; i++) {
+    var element = zirkaIPAElements[i];
+    var options = {display:'ipa'};
     if (element.getAttribute('size')) {
       options.size = element.getAttribute('size');
     }
