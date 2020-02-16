@@ -104,7 +104,7 @@
   <li>Basic sentence structure follows English rules.</li>
   <li>For translation purposes, vowels are interpreted based on the pronunciation of the vowel. In a word like
     &ldquo;sheep&rdquo; [ʃip], the vowel is pronounced &ldquo;ee&rdquo; ( /i/ ), so you would use an &ldquo;i&rdquo; in
-    your staging writing like so &ldquo;ship&rdquo;.
+    your staging writing like so: &ldquo;ship&rdquo;.
     <ul>
       <li>If a vowel pronunciation does not work this way, interpret it based on its vowel &ldquo;family&rdquo;. For
         example, &ldquo;ship&rdquo; [ʃɪp] would be staged as &ldquo;ship&rdquo; because /ɪ/ is considered to be in the
@@ -133,9 +133,12 @@
     </ul>
   </li>
   <li>Consecutive consonants (i.e. CC) are always separated into separate syllables. This only applies to consecutives
-    of Zirka vowels listed above, not the romanization of the letters, which sometimes contains 2 Roman characters.
+    of Zirka consonants listed above, not the romanization of the letters, which sometimes contains 2 Roman characters.
     <ul>
       <li>If &ldquo;platter&rdquo; was a Zirka word, it would be pronounced broken up like &ldquo;p-lat-ter&rdquo;.</li>
+      <li>The characters &ldquo;Fl&rdquo; and &ldquo;Sh&rdquo;, which produce <em class="zirka-pronounce">fl</em> /<zirka-ipa>Fl</zirka-ipa>/
+      and <em class="zirka-pronounce">Sh</em> /<zirka-ipa>Sh</zirka-ipa>/ <em>are</em> pronounced as written without being
+      separate syllables.</li>
     </ul>
   </li>
   <li>Consecutive vowels (i.e. VV) are always separated by a glottal stop /ʔ/ (a short, unpronounced &ldquo;break&rdquo;
@@ -145,15 +148,15 @@
     <ul>
       <li>If &ldquo;create&rdquo; was a Zirka word, it would be pronounced broken up like &ldquo;k-re-a-te&rdquo; (or
         rather, &ldquo;<em>k-re&rsquo;a-te</em>&rdquo;).</li>
+      <li>The diphthong &ldquo;ai&rdquo;, which produces <em class="zirka-pronounce">ai</em> /<zirka-ipa>ai</zirka-ipa>/ <em>is</em> pronounced
+        as written without being separated by a glottal stop.</li>
     </ul>
   </li>
   <li>Plurals are simply the singular form of the word with &ldquo;es&rdquo; attached to the end during the translation
     phase.
     <ul>
-      <li>Book &rarr; buk [bʊk] &rarr; bukes &rArr; <strong class="zirka-only">bukes</strong> (<em
-          class="zirka-pronounce">bukes</em>)</li>
-      <li>Child &rarr; chaild [t͡ʃaild] &rarr; chaildes &rArr; <strong class="zirka-only">chaildes</strong> (<em
-          class="zirka-pronounce">chaildes</em>)</li>
+      <li>Book &rarr; buk [bʊk] &rarr; bukes &rArr; <strong class="zirka-only">bukes</strong> (<em class="zirka-pronounce">bukes</em>)</li>
+      <li>Child &rarr; chaild [t͡ʃaild] &rarr; chaildes &rArr; <strong class="zirka-only">chaildes</strong> (<em class="zirka-pronounce">chaildes</em>)</li>
     </ul>
   </li>
   <li>The only article used is the definite &ldquo;the.&rdquo; A and An are implied if there is no &ldquo;the&rdquo;
@@ -314,6 +317,11 @@
   know at <a href="mailto:info@zirka.ga">info@zirka.ga</a> and I will either determine what should be written instead of
   the problem-causing phrase or update the grammar to solve the problem if it is important enough to fix.</p>
   
+<script>
+window.Zirka = {
+    defaultSize: '16px',
+};
+</script>
 <script src="./translate.js"></script>
 </body>
 </html>
