@@ -298,6 +298,8 @@ window.Zirka.insertCharacters = function (string, container, options) {
   container.style.lineHeight = options.size;
 
   var result = '';
+  var consonants = ['b', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'r', 's', 't', 'v', 'd', 'y'];
+  var vowels = ['a', 'e', 'i', 'o', 'u'];
   var characters = window.Zirka.getMappedLetters(string, options.display === 'pronunciation');
   for (var i = 0; i < characters.length; i++) {
     var character = characters[i]
@@ -322,7 +324,21 @@ window.Zirka.insertCharacters = function (string, container, options) {
       case 'pronunciation': {
         container.setAttribute('dir', '');
         container.style.direction = '';
-        result += character.pronunciation;
+        var pronunciation = character.pronunciation;
+        var prev = characters[i - 1];
+        if (typeof prev !== 'undefined') {
+          var prevLetter = prev.pronunciation[prev.pronunciation.length - 1];
+          if ((
+            consonants.indexOf(pronunciation[0]) > -1
+            && consonants.indexOf(prevLetter) > -1
+          ) || (
+            vowels.indexOf(pronunciation[0]) > -1
+            && vowels.indexOf(prevLetter) > -1
+          )) {
+          result += "'";
+        }
+      }
+        result += pronunciation;
         break;
       }
       case 'ipa': {
