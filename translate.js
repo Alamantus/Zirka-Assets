@@ -336,7 +336,7 @@ window.Zirka.insertCharacters = function (string, container, options) {
         container.style.direction = '';
         var pronunciation = character.pronunciation;
         var prev = characters[i - 1];
-        if (typeof prev !== 'undefined') {
+        if (!!prev) {
           var prevLetter = prev.pronunciation[prev.pronunciation.length - 1];
           if ((
             consonants.indexOf(pronunciation[0]) > -1
