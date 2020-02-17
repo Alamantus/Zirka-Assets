@@ -20,6 +20,16 @@ window.Zirka.characterMap = {
     pronunciation: 'k',
     ipa: 'k',
   },
+  bl: {
+    character: 'bl',
+    pronunciation: 'kr',
+    ipa: 'kr',
+  },
+  br: {
+    character: 'br',
+    pronunciation: 'kes',
+    ipa: 'kɛs',
+  },
   ch: {
     character: 'ch',
     pronunciation: 'th',
