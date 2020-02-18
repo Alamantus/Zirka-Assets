@@ -338,16 +338,12 @@ window.Zirka.insertCharacters = function (string, container, options) {
         var prev = characters[i - 1];
         if (!!prev) {
           var prevLetter = prev.pronunciation[prev.pronunciation.length - 1];
-          if ((
-            consonants.indexOf(pronunciation[0]) > -1
-            && consonants.indexOf(prevLetter) > -1
-          ) || (
-            vowels.indexOf(pronunciation[0]) > -1
-            && vowels.indexOf(prevLetter) > -1
-          )) {
-          result += "'";
+          if (consonants.indexOf(pronunciation[0]) > -1 && consonants.indexOf(prevLetter) > -1) {
+            result += "-";
+          } else if (vowels.indexOf(pronunciation[0]) > -1 && vowels.indexOf(prevLetter) > -1) {
+            result += "'";
+          }
         }
-      }
         result += pronunciation;
         break;
       }
