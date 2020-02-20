@@ -361,9 +361,10 @@ window.Zirka.insertCharacters = function (string, container, options) {
 window.Zirka.getURL = function () {
   if (typeof window.Zirka.url === 'undefined') {
     var scripts = document.getElementsByTagName('script');
+    var regex = /translate(-min)?.js$/;
     for (var i = 0; i < scripts.length; i++) {
-      if (/translate.js$/.test(scripts[i].src)) {
-        window.Zirka.url = scripts[i].src.replace(/translate.js$/, '');
+      if (regex.test(scripts[i].src)) {
+        window.Zirka.url = scripts[i].src.replace(regex, '');
         break;
       }
     }
