@@ -15,7 +15,7 @@ When the page loads, the script will search for all instances of the following t
 - `<zirka></zirka>`: Shows both the Zirka character and the pronunciation above it in Ruby format
 - `<zirka-only></zirka-only>`: Shows only the Zirka characters.
 - `<zirka-pronounce></zirka-pronounce>`: Shows only the Zirka pronunciation.
-- `<zirka-ipa></zirka-ipa>`: Shows only the Zirka [International Phonetic Alphabet](https://www.internationalphoneticalphabet.org/) (IPA) pronunciation.
+- `<zirka-ipa></zirka-ipa>`: Shows only the Zirka [International Phonetic Alphabet](https://www.internationalphoneticalphabet.org/) (IPA) pronunciation (does not separate syllables yet).
 
 In environments where you are unable to use custom HTML elements, you can use classes with the same name instead:
 
@@ -24,7 +24,7 @@ In environments where you are unable to use custom HTML elements, you can use cl
 - `<span class="zirka-pronounce"></span>`
 - `<span class="zirka-ipa"></span>`
 
-Any text inside these tags will be transformed into Zirka. This works best if you use [correct Zirka translation](https://zirka.ga/usage) techniques (i.e. converting English to its "pronounced" form first).
+Any text inside these tags will be transformed into Zirka. This works best if you use [correct Zirka translation](https://zirka.ga/usage.html) techniques (i.e. converting English to its "pronounced" form first).
 
 The default font size is `16pt`, but you can set the font size manually if you want by adding a `size` attribute to the tag, for example: `<zirka size="20pt">`.
 
