@@ -1,13 +1,13 @@
 # Zirka Assets
 
-This repository contains assets for various [Zirka](https://zirka.ga) tools and SVG files for each character in the language!
+This repository contains assets for various [Zirka](https://alamantus.com/zirka) tools and SVG files for each character in the language!
 
 ## Zirka Translator
 
 To use the automatic Zirka translator, simply add this to your HTML:
 
 ```
-<script src="//zirka.ga/translate-min.js"></script>
+<script src="//alamantus.com/zirka/translate-min.js"></script>
 ```
 
 When the page loads, the script will search for all instances of the following tags:
@@ -24,11 +24,11 @@ In environments where you are unable to use custom HTML elements, you can use cl
 - `<span class="zirka-pronounce"></span>`
 - `<span class="zirka-ipa"></span>`
 
-Any text inside these tags will be transformed into Zirka. This works best if you use [correct Zirka translation](https://zirka.ga/usage.html) techniques (i.e. converting English to its "pronounced" form first).
+Any text inside these tags will be transformed into Zirka. This works best if you use [correct Zirka translation](https://alamantus.com/zirka/usage.html) techniques (i.e. converting English to its "pronounced" form first).
 
 The default font size is `16pt`, but you can set the font size manually if you want by adding a `size` attribute to the tag, for example: `<zirka size="20pt">`.
 
-Check out the [live demo](https://zirka.ga/demo.html) to see how it looks.
+Check out the [live demo](https://alamantus.com/zirka/demo.html) to see how it looks.
 
 ### Setting Defaults
 
